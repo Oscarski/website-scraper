@@ -1,0 +1,36 @@
+{
+  "name": "website-screenshot-generator",
+  "version": "1.0.0",
+  "description": "A simple Node.js CLI tool that captures PNG screenshots of any list of URLs using headless Chrome (Puppeteer)",
+  "main": "screenshooter.js",
+  "bin": {
+    "screenshooter": "./screenshooter.js"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "cli": "node screenshooter.js",
+    "test": "node screenshooter.js https://example.com"
+  },
+  "keywords": [
+    "screenshot",
+    "puppeteer",
+    "chrome",
+    "headless",
+    "cli",
+    "website",
+    "capture"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2",
+    "puppeteer": "^21.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}

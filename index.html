@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Screenshot Generator 📸</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 Website Screenshot Generator</h1>
+            <p>Capture beautiful screenshots of any website instantly</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="url-input-container">
+                    <div class="url-input-wrapper">
+                        <input 
+                            type="url" 
+                            id="urlInput" 
+                            placeholder="Enter website URL (e.g., https://example.com)"
+                            autocomplete="off"
+                        >
+                        <div class="url-toggle">
+                            <button type="button" id="singleUrlBtn" class="toggle-btn active">Single URL</button>
+                            <button type="button" id="multipleUrlBtn" class="toggle-btn">Multiple URLs</button>
+                        </div>
+                    </div>
+                    <textarea 
+                        id="urlsTextarea" 
+                        placeholder="Enter multiple URLs (one per line):&#10;https://example.com&#10;https://openai.com&#10;https://github.com"
+                        style="display: none;"
+                        rows="4"
+                    ></textarea>
+                    <button id="captureBtn" class="capture-btn">
+                        <span class="btn-text">Capture Screenshot</span>
+                        <span class="btn-loading" style="display: none;">
+                            <div class="spinner"></div>
+                            Capturing...
+                        </span>
+                    </button>
+                </div>
+                
+                <div class="options">
+                    <div class="option-group">
+                        <label for="width">Width:</label>
+                        <input type="number" id="width" value="1366" min="320" max="3840">
+                    </div>
+                    <div class="option-group">
+                        <label for="height">Height:</label>
+                        <input type="number" id="height" value="768" min="240" max="2160">
+                    </div>
+                    <div class="option-group checkbox">
+                        <label for="fullPage">
+                            <input type="checkbox" id="fullPage">
+                            Full page screenshot
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label for="format">Format:</label>
+                        <select id="format">
+                            <option value="png">PNG</option>
+                            <option value="pdf">PDF</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>📸 Screenshot Results</h3>
+                <div class="screenshot-container" id="screenshotContainer">
+                    <!-- Screenshots will be displayed here -->
+                </div>
+                <div class="batch-controls" id="batchControls" style="display: none;">
+                    <button id="prevPage" class="nav-btn">← Previous</button>
+                    <span id="pageInfo">Page 1 of 1</span>
+                    <button id="nextPage" class="nav-btn">Next →</button>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection" style="display: none;">
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Puppeteer • Built with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
